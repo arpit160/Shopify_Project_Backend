@@ -1,0 +1,67 @@
+<body style="margin: 0;padding: 0; background-color:azure">
+  <div style="margin-bottom: 50px; display: flex; justify-content: space-around; background-color: antiquewhite; padding: 10px;;">
+    <div>
+        <h2>Inventory Management</h2>
+    </div>
+    <div>
+        <h4><a style="text-decoration: none;" href='/'>Home</a></h4>
+    </div>
+    <div>
+        <h4><a style="text-decoration: none;"  href="/addItem">Add a item</a></h4>
+    </div>
+    <div>
+        <h4><a style="text-decoration: none;" href="/viewAll">View All items</a></h4>
+    </div>
+    <div>
+      <h4><a style="text-decoration: none;" href="/viewAll">Edit item</a></h4>
+  </div>
+  <div>
+      <h4><a style="text-decoration: none;" href="/viewAll">Delete item</a></h4>
+  </div>
+    
+  </div>
+  <div style="display: flex; justify-content: space-around; width:80%; margin-left: 10%; margin-bottom: 20px;">
+    <div style="text-decoration: underline; width:20%;">ItemName</div>
+    <div style="text-decoration: underline;width:20%;">ItemCode</div>
+    <div style="text-decoration: underline;width:20%;">View Item</div>
+    <div style="text-decoration: underline;width:20%;">Edit Item</div>
+    <div style="text-decoration: underline;width:20%;">Delete Item</div>
+  </div>
+  
+<div style="margin-left: 10%; width: 80%;">
+  <% for( let i = 0; i < items.length; i++ ) { %>
+  
+  
+  
+    <div style="display: flex; justify-content: space-around; padding: 10px; padding-bottom: 0px;">
+      <div style="width: 20%;"><%= items[i].itemName  %></div>
+      <div style="width: 20%;"><%= items[i].itemCode  %></div>
+      <div style="width: 20%;">
+          <form action="/viewSingle/<%= items[i].itemCode %> ">
+              <button>view Item</button>
+          </form>
+      </div>
+      <div style="width: 20%;">
+        <form action="/editItem/<%= items[i].itemCode %> ">
+            <button>Edit Item</button>
+        </form>
+    </div>
+    <div style="width: 20%;">
+      <form action="/deleteItem/<%= items[i].itemCode %> ">
+          <button>Delete Item</button>
+      </form>
+  </div>
+    </div>
+    <hr>
+  
+  
+  <% } %>
+</div>
+  <div style="margin-top:100px;">
+    <center>
+        <form action="/csv">
+            <button>Get a CSV File</button>
+        </form>
+    </center>
+</div>
+</body>

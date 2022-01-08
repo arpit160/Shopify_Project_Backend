@@ -1,0 +1,48 @@
+<body style="margin: 0; padding: 0; background-color:azure">
+    
+<div style="display: flex; justify-content: space-around; background-color: antiquewhite; padding: 10px;;">
+    <div>
+        <h2>Inventory Management</h2>
+    </div>
+    <div>
+        <h4><a style="text-decoration: none;" href='/'>Home</a></h4>
+    </div>
+    <div>
+        <h4><a style="text-decoration: none;"  href="/addItem">Add a item</a></h4>
+    </div>
+    <div>
+        <h4><a style="text-decoration: none;" href="/viewAll">View All items</a></h4>
+    </div>
+    
+    <div>
+        <h4><a style="text-decoration: none;" href="/viewAll">Edit item</a></h4>
+    </div>
+    <div>
+        <h4><a style="text-decoration: none;" href="/viewAll">Delete item</a></h4>
+    </div>
+</div>
+<center>
+    <h3 style="margin-top:50px">Item Details</h3>
+</center>
+<div style="display: flex; flex-direction: column;  margin: auto; border: 1px solid balck; padding: 5px; width: 40%; margin-top:50px">
+<div style="margin-bottom: 10px;">Inventory Id: <%= item.inventoryId %></div>
+<div style="margin-bottom: 10px;">Item Code:<%= item.itemCode  %></div>
+<div style="margin-bottom: 10px;">Item Name:<%= item.itemName %></div>
+<div style="margin-bottom: 10px;">Item category:<%= item.category  %></div>
+<div style="margin-bottom: 10px;">Unit Price:<%= item.unitPrice %></div>
+<div style="margin-bottom: 10px;">Present Quantity:<%= item.presentQuantity %></div>
+<div style="margin-bottom: 10px;">Ideal Quantity:<%= item.idealQuantity %></div>
+<div style="margin-bottom: 30px;">Date Purchasrd:<%= item.datePurchased %></div>
+<hr>
+<div style="display: flex; justify-content: space-around; width: 50%;">
+    <form  action='/editItem/<%= item.itemCode %> '>
+        <button>Edit Item</button>
+    </form>
+    <form action='/deleteItem/<%= item.itemCode %> '>
+        <button>Delete Item</button>
+    </form>
+</div>
+</div>
+
+
+</body>

@@ -1,0 +1,61 @@
+<body style="margin: 0;padding: 0; background-color:azure">
+    <div style="display: flex; justify-content: space-around; background-color: antiquewhite; padding: 10px;;">
+        <div>
+            <h2>Inventory Management</h2>
+        </div>
+        <div>
+            <h4><a style="text-decoration: none;" href='/'>Home</a></h4>
+        </div>
+        <div>
+            <h4><a style="text-decoration: none;"  href="/addItem">Add a item</a></h4>
+        </div>
+        <div>
+            <h4><a style="text-decoration: none;" href="/viewAll">View All items</a></h4>
+        </div>
+        <div>
+            <h4><a style="text-decoration: none;" href="/viewAll">Edit item</a></h4>
+        </div>
+        <div>
+            <h4><a style="text-decoration: none;" href="/viewAll">Delete item</a></h4>
+        </div>
+        
+    </div>
+    
+    <p style="padding-top: 30px;">
+        <center>
+            <h3>Edit Inventory Item</h3>
+        </center>
+    </p>
+    
+    <div style="border: 1px solid black; padding:20px; width: 30%; margin-left: 35%; margin-top: 30px;">
+        <form method="POST" action="/editItem/<%= item.itemCode %> ">
+            <div style="margin-bottom: 10px;">
+                Inventory ID: <input type="text" name="inventoryId" value=<%= item.inventoryId %> >
+            </div>
+            <div style="margin-bottom: 10px;">
+                Category : <input type="text" name="category" value=<%=item.category  %> >
+            </div>
+            <div style="margin-bottom: 10px;">
+                Item Code : <input type="text" name="itemCode" value=<%=item.itemCode  %> >
+            </div>
+            <div style="margin-bottom: 10px;">
+                Item Name : <input type="text" name="itemName" value=<%=item.itemName  %> >
+            </div>
+            <div style="margin-bottom: 10px;">
+                Unit Price : <input type="number" name="unitPrice" value=<%=item.unitPrice  %> >
+            </div>
+            <div style="margin-bottom: 10px;">
+                Present Quantity : <input type="number" name="presentQuantity" value=<%=item.presentQuantity  %> >
+            </div>
+            <div style="margin-bottom: 10px;">
+                Ideal Quantity : <input type="number" name="idealQuantity" value=<%=item.idealQuantity  %> >
+            </div>
+            <div style="margin-bottom: 10px;">
+                Date Purchased : <input type="date" name="datePurchased" value=<%=item.datePurchased  %> >
+            </div>
+            <div style="margin-bottom: 10px;">
+                <button role="submit">Edit</button>
+            </div>
+         </form>
+    </div>
+</body>
